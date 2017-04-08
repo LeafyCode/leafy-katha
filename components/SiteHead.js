@@ -38,11 +38,21 @@ const AppHead = () => (
       href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css"
     />
 
-    <style>{`body {
-      background-color: #F2F6D0;
-      margin: 0;
-      font-family: 'Josefin Sans', sans-serif;
-    }`}</style>
+    <style>{`
+      body {
+        background-color: #F2F6D0;
+        margin: 0;
+        font-family: 'Josefin Sans', sans-serif;
+        color: #2D3047;
+      }
+
+      @font-face {
+        font-family: 'Ayanna';
+        src: url("/static/fonts/Ayanna-Bold.ttf") format("truetype");
+        font-style: normal;
+        font-weight: 600;
+      }
+    `}</style>
   </Head>
   );
 
