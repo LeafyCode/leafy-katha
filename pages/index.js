@@ -37,7 +37,9 @@ class App extends Component {
         const { items } = response.data;
 
         videos = items;
-      });
+      }).catch(() => ({
+        videos
+      }));
 
     return {
       videos
@@ -103,7 +105,7 @@ class App extends Component {
             <div className="box">
               <AppTitle>Leafy<TitleKatha>කථා</TitleKatha></AppTitle>
               <TagLine>
-                A podcast created <strong>by</strong> developers <strong>for</strong>
+                A podcast created <strong>by</strong> developers <strong>for </strong>
                 developers.
               </TagLine>
               <Description>
