@@ -14,14 +14,24 @@ import {
   AppTitle,
   Logo,
   TagLine,
-  Description
+  Description,
+  VideoItem,
+  SocialProfiles
 } from '../components/StyledComponents';
 
 class App extends Component {
   static async getInitialProps() {
     let videos = [];
 
-    await axios.get(YOUTUBE_ENDPOINT)
+    const params = {
+      part: 'snippet,id',
+      key: 'AIzaSyCbP-krSbnuVvVmc-0Ka7rf7n-Myv5pIkY',
+      q: '',
+      type: 'video',
+      channelId: 'UCMb-c2UdxjqkQu82aNo1fhw'
+    };
+
+    await axios.get(YOUTUBE_ENDPOINT, { params })
       .then((response) => {
         const { items } = response.data;
 
@@ -36,18 +46,59 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      videos: props.videos
-    };
+    this.videosList = this.videosList.bind(this);
+  }
+
+  videosList() {
+    const { videos } = this.props;
+
+    return videos.map(video => (
+      <VideoItem key={video.id.videoId} className="col-xs-10 col-sm-6 col-lg-4">
+        <a
+          href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div >
+            <img src={video.snippet.thumbnails.medium.url} alt="" />
+            <p className="video-description">{video.snippet.title}</p>
+          </div>
+        </a>
+      </VideoItem>
+      ));
   }
 
   render() {
     return (
       <AppWrapper>
         <Logo src="/static/images/logo.svg" alt="Logo" />
+        <SocialProfiles>
+          <a
+            href="https://www.facebook.com/LeafyKatha/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/static/images/facebook.svg" alt="Facebook" />
+          </a>
+          <a
+            href="https://twitter.com/LeafyKatha"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/static/images/twitter.svg" alt="Twitter" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCMb-c2UdxjqkQu82aNo1fhw"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/static/images/youtube.svg" alt="YouTube" />
+          </a>
+        </SocialProfiles>
+
         <SiteHead />
         <Container className="row middle-xs center-xs">
-          <div className="col-xs-7">
+          <div className="col-xs-11 col-sm-7">
             <div className="box">
               <AppTitle>Leafy<TitleKatha>කථා</TitleKatha></AppTitle>
               <TagLine>
@@ -62,6 +113,13 @@ class App extends Component {
                 We want to find them, build a strong community and challenge the world together!
                 The journey will be tough. If you think you can take it, come join us!
               </Description>
+            </div>
+
+            <br />
+            <br />
+
+            <div className="row center-xs">
+              {this.videosList()}
             </div>
           </div>
         </Container>
