@@ -56,12 +56,12 @@ const AppHead = () => (
 
     <link
       href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,700"
-      rel="stylesheet"
+      rel="preload" onLoad="this.rel='stylesheet'"
     />
 
     <link
-      rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css"
+      rel="preload" onLoad="this.rel='stylesheet'"
     />
 
     {/* eslint-disable react/no-danger */}
