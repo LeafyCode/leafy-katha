@@ -13,7 +13,7 @@ const AppHead = () => (
     <meta property="og:site_name" content="Leafy Katha" />
 
     <meta property="og:url" content="https://leafykatha.live/" />
-    <meta property="og:image" content="https://leafykatha.live/share-image.png" />
+    <meta property="og:image" content="https://leafykatha.live/static/images/share-image.png" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/static/favicons/apple-icon-60x60.png" />
