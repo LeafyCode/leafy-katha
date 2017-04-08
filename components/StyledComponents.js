@@ -54,6 +54,7 @@ export const VideoItem = styled.div`
     border: 4px solid #FFBA49;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
+    max-width: 320px;
   }
 
   .video-description{
@@ -96,5 +97,24 @@ export const SocialProfiles = styled.div`
     &:hover{
       box-shadow: 0 2px 10px #ddd;
     }
+  }
+`;
+
+export const Footer = styled.footer`
+  font-size: 0.7rem;
+  color: #404040;
+
+  p{
+    display: inline-block;
+  }
+
+  a{
+    color: #E84855;
+  }
+
+  img{
+    width: 12px;
+    margin-left: 6px;
+    margin-bottom: -3px;
   }
 `;

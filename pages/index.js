@@ -16,7 +16,8 @@ import {
   TagLine,
   Description,
   VideoItem,
-  SocialProfiles
+  SocialProfiles,
+  Footer
 } from '../components/StyledComponents';
 
 class App extends Component {
@@ -98,7 +99,7 @@ class App extends Component {
 
         <SiteHead />
         <Container className="row middle-xs center-xs">
-          <div className="col-xs-11 col-sm-7">
+          <div className="col-xs-11 col-sm-7 col-md-7">
             <div className="box">
               <AppTitle>Leafy<TitleKatha>කථා</TitleKatha></AppTitle>
               <TagLine>
@@ -121,7 +122,43 @@ class App extends Component {
             <div className="row center-xs">
               {this.videosList()}
             </div>
+
+            <br />
+
+            <Footer>
+              <p>
+                <img src="/static/images/heart.svg" alt="Heart" />&nbsp;
+                Created by <a
+                  href="http://leafycode.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LeafyCode
+                </a> for the community.
+              </p>
+
+              <p>
+                &nbsp;Fonts by
+                <a
+                  href="http://mooniak.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  &nbsp;Mooniak
+                </a>.
+              Powered by NextJS and React.
+              <a
+                href="https://github.com/LeafyCode/leafy-katha"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/static/images/github.svg" alt="Github" />
+              </a>
+              </p>
+            </Footer>
           </div>
+
+
         </Container>
       </AppWrapper>
     );
