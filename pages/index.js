@@ -74,6 +74,8 @@ class App extends Component {
   render() {
     return (
       <AppWrapper>
+        <SiteHead />
+
         <Logo src="/static/images/logo.svg" alt="Logo" />
         <SocialProfiles>
           <a
@@ -99,7 +101,6 @@ class App extends Component {
           </a>
         </SocialProfiles>
 
-        <SiteHead />
         <Container className="row middle-xs center-xs">
           <div className="col-xs-11 col-sm-7 col-md-7">
             <div className="box">
