@@ -15,6 +15,22 @@ const AppHead = () => (
     <meta property="og:url" content="https://leafykatha.live/" />
     <meta property="og:image" content="https://leafykatha.live/static/images/share-image.png" />
 
+    <style>{`
+      body {
+        background-color: #F2F6D0;
+        margin: 0;
+        font-family: 'Josefin Sans', sans-serif;
+        color: #2D3047;
+      }
+
+      @font-face {
+        font-family: 'Ayanna';
+        src: url("/static/fonts/Ayanna-Bold.ttf") format("truetype");
+        font-style: normal;
+        font-weight: 600;
+      }
+    `}</style>
+
     <link rel="apple-touch-icon" sizes="57x57" href="/static/favicons/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/static/favicons/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/static/favicons/apple-icon-72x72.png" />
@@ -48,21 +64,25 @@ const AppHead = () => (
       href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css"
     />
 
-    <style>{`
-      body {
-        background-color: #F2F6D0;
-        margin: 0;
-        font-family: 'Josefin Sans', sans-serif;
-        color: #2D3047;
-      }
+    {/* eslint-disable react/no-danger */}
+    <script
+      dangerouslySetInnerHTML={{ __html: `<!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T5GX8FQ');</script>
+      <!-- End Google Tag Manager -->` }}
+    />
+    {/* eslint-enable react/no-danger */}
 
-      @font-face {
-        font-family: 'Ayanna';
-        src: url("/static/fonts/Ayanna-Bold.ttf") format("truetype");
-        font-style: normal;
-        font-weight: 600;
-      }
-    `}</style>
+    <noscript><iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-T5GX8FQ"
+      height="0" width="0" style={{
+        display: 'none',
+        visibility: 'hidden'
+      }}
+    /></noscript>
   </Head>
   );
 
