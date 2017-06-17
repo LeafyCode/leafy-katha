@@ -29,7 +29,8 @@ class App extends Component {
       key: 'AIzaSyCbP-krSbnuVvVmc-0Ka7rf7n-Myv5pIkY',
       q: '',
       type: 'video',
-      channelId: 'UCMb-c2UdxjqkQu82aNo1fhw'
+      channelId: 'UCMb-c2UdxjqkQu82aNo1fhw',
+      maxResults: 50
     };
 
     await axios.get(YOUTUBE_ENDPOINT, { params })
